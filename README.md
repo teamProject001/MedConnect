@@ -1,3 +1,3 @@
 # MedConnect
 
-New Project
+New Project Team
