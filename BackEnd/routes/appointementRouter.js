@@ -5,7 +5,8 @@ const {
     createAppointment,
     getAppointment,
     updateAppointment,
-    deleteAppointment
+    deleteAppointment,
+    getUpcomingAppointments
 } = require('../controllers/appointemzntController.js');
 
 // Routes
@@ -14,5 +15,8 @@ router.post('/newApointement', createAppointment);
 router.get('/appointement/:id', getAppointment);
 router.put('/updateApointement/:id', updateAppointment);
 router.delete('/deleteApointement/:id', deleteAppointment);
+
+// Route to get upcoming appointments
+router.get('/upcoming', getUpcomingAppointments);
 
 module.exports = router;

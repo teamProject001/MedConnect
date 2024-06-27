@@ -1,6 +1,8 @@
 const Appointment = require('../database/models/ApointSchema');
 const Patient = require('../database/models/patients');
 
+const moment = require('moment'); // ? 
+
 // Get all appointments
 exports.getAppointments = async (req, res) => {
     try {
@@ -80,6 +82,20 @@ exports.deleteAppointment = async (req, res) => {
             return res.status(404).json({ message: 'Appointment not found' });
         }
         res.json({ message: 'Appointment deleted' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+// Get upcoming appointments
+exports.getUpcomingAppointments = async (req, res) => {
+    try {
+        const today = moment().startOf('day');
+        const upcomingAppointments = await Appointment.find({
+            appointmentDate: { $gte: today }
+        }).populate('patientId'); 
+
+        res.json(upcomingAppointments);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

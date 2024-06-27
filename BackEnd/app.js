@@ -20,7 +20,6 @@ app.use("/api",usersRoutes)
 
 app.use("/api/appointement", appointementRoute)
 
-
 //************ patient : *******************/
 
 app.use("/api/patient/", patientRoute)

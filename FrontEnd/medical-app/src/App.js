@@ -7,8 +7,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from './pages/Login.jsx';
-import Register from './pages/Register.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 
 
 function App() {
@@ -17,8 +16,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/register" element={<Register/>}></Route>
+       
+        <Route exact path="/dashboard" element={<Dashboard/>}></Route>
+
+
+          <Route path="/patients/:id"></Route> 
+          
+         
       </Routes>
     </BrowserRouter>
     </div>
