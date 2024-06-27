@@ -9,10 +9,10 @@ const {
 } = require('../controllers/appointemzntController.js');
 
 // Routes
-router.get('/', getAppointments);
-router.post('/', createAppointment);
-router.get('/:id', getAppointment);
-router.put('/:id', updateAppointment);
-router.delete('/:id', deleteAppointment);
+router.get('/allAppointement', getAppointments);
+router.post('/newApointement', createAppointment);
+router.get('/appointement/:id', getAppointment);
+router.put('/updateApointement/:id', updateAppointment);
+router.delete('/deleteApointement/:id', deleteAppointment);
 
 module.exports = router;
