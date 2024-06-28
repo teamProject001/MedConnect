@@ -39,7 +39,7 @@ const Admin = (props) => {
                                   <td>{ele.city}</td>
                                   <td>{ele.bio}</td>
                                   <td><button className="btn btn-outline-danger" onClick={()=>{props.delete(ele._id)}}>Delete</button></td>
-                                  <td><button className="btn btn-outline-white" onClick={()=>{props.change(ele)}}><Link to="/">Update</Link></button></td>
+                                  <td><button className="btn btn-outline-white" onClick={()=>{props.change(ele)}}><Link to="/profile">Update</Link></button></td>
                               </tr>
                                )}
 
