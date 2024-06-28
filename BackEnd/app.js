@@ -6,7 +6,7 @@ app.use(express.json())
 const port = 5000
 
 const usersRoutes = require ("./routes/users.js")
-const patientsRoutes= require("./routes/patients.js")
+// const patientsRoutes= require("./routes/patients.js")
 
 const db = require("./database/index.js")
 
@@ -15,7 +15,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/api",usersRoutes)
-app.use("/api",patientsRoutes)
+app.use("/api",usersRoutes)
 
 app.listen(port,()=>{
    console.log(`server listenning on port ${port}`)

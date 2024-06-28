@@ -4,7 +4,7 @@ var router = express.Router()
 
 const {Register, Login, Test}= require ("../controllers/users.controllers.js")
 
-const {AddProfile,FindAllProfiles,FindSingleProfile,DeleteProfile} = require ("../controllers/profile.controllers.js")
+const {AddProfile,FindAllProfiles,FindSingleProfile,DeleteProfile} = require ("../controllers/profiles.controllers.js")
 
 router.post('/register',Register)
 router.post('/login',Login)
