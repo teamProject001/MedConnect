@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Dashboard from './pages/Dashboard.jsx';
+import PatientProfile from './pages/PatientProfile.jsx';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route exact path="/dashboard" element={<Dashboard/>}></Route>
 
 
-          <Route path="/patients/:id"></Route> 
+          <Route path="/patients/:id" element={<PatientProfile/>}></Route> 
           
          
       </Routes>
