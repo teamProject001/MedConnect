@@ -9,7 +9,7 @@ const usersRoutes = require ("./routes/users.js")
 const appointementRoute= require("../BackEnd/routes/appointementRouter.js")
 const patientRoute = require ("../BackEnd/routes/patientRoute.js")
 const db = require("./database/index.js")
-
+const detailsRoutte = require ("./routes/patientDetailsRoute.js")
 app.get("/",(req,res)=>{
     res.send("Hello World")
 })
@@ -24,7 +24,8 @@ app.use("/api/appointement", appointementRoute)
 
 app.use("/api/patient/", patientRoute)
 
-
+//***********patient details : ***********//
+ app.use ("/api/details",detailsRoutte)
 
 
 
