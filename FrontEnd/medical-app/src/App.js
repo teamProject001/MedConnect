@@ -17,10 +17,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Routes>
+      
        
         <Route exact path="/dashboard" element={<Dashboard/>}></Route>
-
-
           <Route path="/patients/:id" element={<PatientProfile/>}></Route> 
           
          

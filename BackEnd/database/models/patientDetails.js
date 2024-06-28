@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PatientDetailsSchema = new mongoose.Schema({
+
   patients: { type: Schema.Types.ObjectId, ref: 'patients', required: true },
   heartRate: {
     type: Number,
