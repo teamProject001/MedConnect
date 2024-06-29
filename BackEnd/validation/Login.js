@@ -18,7 +18,6 @@ module.exports = function ValidateLogin(data) {
   if (validator.isEmpty(data.password)) {
     errors.password = "Required password";
   }
- 
 
 
   return {
