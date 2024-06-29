@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 
 const UploadImage = (props) => {
-    const [name, setName] = useState("")
+    const [firstName,setfirst]=useState("")
+    const [lastName,setlastname]=useState("")
+    const [age,setage]=useState("")
+    const [phone,setphone]=useState("")
+    const [email,setemail]=useState("")
+    const [adresse,setadres]=useState("")
+    const [city,setcity]=useState("")
     const [image, setImage] = useState(null);
     const [imageUrl, setImageUrl] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -38,7 +44,14 @@ const UploadImage = (props) => {
     const handleCreate = () => {
         props.addPatient({
             image: imageUrl,  // Use the uploaded image URL
-            name: name
+            name: name,
+            firstName:firstName,
+            lastname:lastname,
+            age:age,
+            phone:phone,
+            email:email,
+            adresse:adresse,
+            city:city
         });
     }
     return (
@@ -64,9 +77,51 @@ const UploadImage = (props) => {
                     </button>
                     <input
                         type="text"
-                        value={name}
-                        placeholder='Name'
-                        onChange={e => setName(e.target.value)}
+                        value={firstName}
+                        placeholder='fistname'
+                        onChange={e => setfirst(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded mt-2"
+                    />
+                    <input
+                        type="text"
+                        value={lastName}
+                        placeholder='lastname'
+                        onChange={e => setlastname(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded mt-2"
+                    />
+                    <input
+                        type="text"
+                        value={age}
+                        placeholder='age'
+                        onChange={e => setage(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded mt-2"
+                    />
+                    <input
+                        type="text"
+                        value={phone}
+                        placeholder='phone'
+                        onChange={e => setphone(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded mt-2"
+                    />
+                    <input
+                        type="text"
+                        value={email}
+                        placeholder='email'
+                        onChange={e => setemail(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded mt-2"
+                    />
+                    <input
+                        type="text"
+                        value={adresse}
+                        placeholder='adresse'
+                        onChange={e => setadres(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded mt-2"
+                    />
+                     <input
+                        type="text"
+                        value={city}
+                        placeholder='city'
+                        onChange={e => setcity(e.target.value)}
                         className="w-full p-2 border border-gray-300 rounded mt-2"
                     />
                 </div>
