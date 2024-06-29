@@ -12,11 +12,11 @@ const PatientModel = new Schema(
             type: String,
             required: true
         },
-        dateOfBirth: {
+        age: {
             type: Date,
             required: true
         },
-        contactNumber: {
+        phone : {
             type: String,
             required: true
         },
