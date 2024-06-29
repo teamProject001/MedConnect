@@ -6,20 +6,33 @@ app.use(express.json())
 const port = 5000
 
 const usersRoutes = require ("./routes/users.js")
-const patientsRoutes= require("./routes/patients.js")
-
+const appointementRoute= require("../BackEnd/routes/appointementRouter.js")
+const patientRoute = require ("../BackEnd/routes/patientRoute.js")
 const db = require("./database/index.js")
-
+const detailsRoutte = require ("./routes/patientDetailsRoute.js")
 app.get("/",(req,res)=>{
     res.send("Hello World")
 })
-
+ //*********** user : doctor **************/
 app.use("/api",usersRoutes)
-app.use("/api",patientsRoutes)
+
+//************ appiontement : *************/
+
+app.use("/api/appointement", appointementRoute)
+
+//************ patient : *******************/
+
+app.use("/api/patient/", patientRoute)
+
+//***********patient details : ***********//
+ app.use ("/api/details",detailsRoutte)
+
+
 
 app.listen(port,()=>{
    console.log(`server listenning on port ${port}`)
 })
+
 
 
 

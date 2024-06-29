@@ -21,18 +21,22 @@ const PatientModel = new Schema(
             required: true
         },
         email: {
-            type: "string",
-            unique: true,
+            type: String,
+            required: true,
+            unique: true
         },
-        adresse: "String",
-        telephone: "String",
-        city:"String",
-        image:"String"
-
+        address: {
+            type: String,
+            required: true
+        },
+       
+        createdAt: {
+            type: Date,
+            default: Date.now
+        }
     }
 
 );
 
-
-
-module.exports = mongoose.model("patients", PatientModel);
+const  patients = mongoose.model("patients", PatientModel);
+module.exports = patients
