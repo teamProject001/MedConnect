@@ -29,19 +29,7 @@ const Admin = (props) => {
                                 </tr>
                             </thead>
                             <tbody>
-                               {props.profile.map((ele)=>
-                                  <tr>
-                                  <th>{ele.user.name}</th>
-                                  <td>{ele.user.email}</td>
-                                  <td>{ele.user.role}</td>
-                                  <td>{ele.tel}</td>
-                                  <td>{ele.country}</td>
-                                  <td>{ele.city}</td>
-                                  <td>{ele.bio}</td>
-                                  <td><button className="btn btn-outline-danger" onClick={()=>{props.delete(ele._id)}}>Delete</button></td>
-                                  <td><button className="btn btn-outline-white" onClick={()=>{props.change(ele)}}><Link to={`/profile/${ele._id}`}>Update</Link></button></td>
-                              </tr>
-                               )}
+                             
 
                             </tbody>
                         </table>

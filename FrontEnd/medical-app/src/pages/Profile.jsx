@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 const Profile = (props) => {
-    const navigate = useNavigate()
+   
     const [tel, setTel] = useState(props.oneProfile.tel)
     const [city, setCity] = useState(props.oneProfile.city)
     const [country, setCountry] = useState(props.oneProfile.country)
@@ -65,14 +65,7 @@ const Profile = (props) => {
                             <div className="d-flex justify-content-between">
                                 <button type="submit" className="btn btn-outline-primary"
                                     onClick={() => {
-                                        props.addProfile({
-                                            user: props.oneProfile.user._id,
-                                            tel: tel,
-                                            city: city,
-                                            country: country,
-                                            bio: bio,
-                                            address: address
-                                        }, navigate)
+                                        
                                     }}>Update <i className="fa-solid fa-floppy-disk"></i></button>
                             </div>
                         </form>

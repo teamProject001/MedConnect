@@ -9,8 +9,7 @@ import {
 
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
-import Profile from './pages/Profile.jsx';
-import Admin from './pages/Admin.jsx';
+
 import NavBar from './components/NavBar.jsx';
 import PrivateRouter from './components/PrivateRouter.jsx';
 import axios from 'axios'
@@ -24,9 +23,7 @@ function App() {
     role: "USER"
   })
   const [errors, setErrors] = useState({})
-  const [profile, setProfiles] = useState([])
-  const [oneProfile, setOneProfiles] = useState({})
-  const [refetsch, setRefetch] = useState(false)
+ 
 
   const postRegister = (body, navigate) => {
     axios.post('http://127.0.0.1:5000/api/register', body).then((response) => {
@@ -60,50 +57,13 @@ function App() {
       });
   }
 
-  const postProfile = (body,navigate) => {
-    axios.post('http://127.0.0.1:5000/api/add', body).then((response) => {
-      console.log(response.data)
-      setRefetch(!refetsch)
-      navigate('/admin')
-    }).catch((error) => {
-      console.log(error.response.data)
-    })
-  }
-
-  const getProfile = () => {
-    axios.get('http://127.0.0.1:5000/api/getProfile').then((response) => {
-      console.log(response.data)
-      setProfiles(response.data)
-    }).catch((error) => {
-      console.log(error.response.data)
-    })
-  }
-
-  const getOneProfile = (id) => {
-    axios.get(`http://127.0.0.1:5000/api/getProfile/${id}`).then((response) => {
-      console.log(response.data)
-      setOneProfiles(response.data)
-    }).catch((error) => {
-      console.log(error.response.data)
-    })
-  }
-
-  const deleteProfile = (id) => {
-    axios.delete(`http://127.0.0.1:5000/api/deleteProfile/${id}`).then((response) => {
-      console.log(response.data)
-      setRefetch(!refetsch)
-    }).catch((error) => {
-      console.log(error)
-    })
-  }
+ 
 
   useEffect(() => {
-    getProfile()
-  }, [refetsch])
+  
+  }, [])
 
-  const onChange = (profile) => {
-    setOneProfiles(profile)
-  }
+
 
   return (
     <div className="App">
@@ -111,10 +71,10 @@ function App() {
         <div className="bg-light" style={{ height: "150vh" }}>
           <NavBar user={user} />
           <Routes>
-            <Route path="/profile/:id" element={<PrivateRouter user={user}><Profile addProfile={postProfile} oneProfile={oneProfile} /></PrivateRouter>}></Route>
+           
             <Route path="/login" element={<Login add={postLogin} errors={errors} />}></Route>
             <Route path="/register" element={<Register add={postRegister} errors={errors} />}></Route>
-            <Route path="/admin" element={<PrivateRouter user={user}> <Admin profile={profile} delete={deleteProfile} change={onChange} /></PrivateRouter>}></Route>
+           
           </Routes>
         </div>
       </BrowserRouter>
