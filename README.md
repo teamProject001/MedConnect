@@ -1,3 +1,0 @@
-# MedConnect
-
-New Project Team
